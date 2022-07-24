@@ -14,7 +14,7 @@ hour = datetime.datetime.now().hour
 a1 = math.sin(hour * math.pi / 24) + 1
 dist = random.lognormvariate(a1, a1 / 3)
 if dist <= 0.1:
-  dist = 0.1
+    dist = 0.1
 
 json_obj = {
     "distance": dist,
