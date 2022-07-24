@@ -13,8 +13,11 @@ def lambda_handler(event, context):
         print("payload: " + str(payload))
 
         # transform record
+        tzinfo = datetime.timezone(datetime.timedelta(hours=7))
+        timestamp = datetime.datetime.fromtimestamp(payload['timestamp']).astimezone(tzinfo)
+        # timestamp = datetime.datetime.fromtimestamp(payload['timestamp'])
         transformed_payload = {
-            "datetime": datetime.datetime.fromtimestamp(payload['timestamp']).strftime('%Y-%m-%d %H:%M:%S'),
+            "datetime": timestamp.strftime('%Y-%m-%d %H:%M:%S'),
             "distance": payload['payloads']['distance'],
         }
         print("transformed_payload: " + str(transformed_payload))
