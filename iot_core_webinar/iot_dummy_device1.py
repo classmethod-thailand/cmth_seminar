@@ -56,3 +56,4 @@ print("Published: '" + json.dumps(json_obj) + "' to the topic: " + TOPIC)
 print('Begin Disconnect')
 disconnect_future = mqtt_connection.disconnect()
 disconnect_future.result()
+
