@@ -7,7 +7,7 @@ import math
 
 s3_bucket_name = "keisuke-test-20220607"
 
-s3_path = "json" + datetime.datetime.now().strftime('%Y%m%d')
+s3_path = "json/" + datetime.datetime.now().strftime('%Y%m%d')
 file_name = datetime.datetime.now().strftime('%Y%m%d_%H%M%S.json')
 
 hour = datetime.datetime.now().hour
