@@ -45,8 +45,12 @@ if dist <= 0.1:
     dist = 0.1
 
 json_obj = {
-    "distance": dist,
-    "datetime": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+    "timestamp": datetime.datetime.now().timestamp(),
+    "payloads":{
+        "distance": dist,
+    }
+    # "distance": dist,
+    # "datetime": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
 }
 
 mqtt_connection.publish(topic = TOPIC, payload = json.dumps(json_obj), qos = mqtt.QoS.AT_LEAST_ONCE)
